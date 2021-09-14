@@ -77,3 +77,62 @@
 	</li>
 </ul>
 
+6. Linear algebra refresher
+	- simple operations
+	```bash
+	
+		2 	4     3		1	4	
+	2 * 4 = 8	; 7 +	9 = 16
+		6	12	  9		2   11
+	```
+
+	- Vector-vector  mulctiplication (dot product)
+	```bash
+		3	1	4
+		7 *	9 = 63 and then sum all = 4 + 63 + 18
+	 	9	2   18
+	 ```
+	 										3
+	- if we want "row * col" mult: [2,4,5] * 6
+	 										1
+	 	=> at first transpose row (T) and then as usual
+
+	- Matrix-vector multiplication
+
+	```bash
+		[0.65467089]    [0.90969502, 0.72492919, 0.06097546, 0.61336228]  
+		[0.8640165 ]    [0.98125557, 0.05038929, 0.36204099, 0.78622776]
+		[0.00112854]    [0.71849521, 0.24262338, 0.67413969, 0.5627456 ]
+		[0.228264  ]    [0.79831637, 0.3811175 , 0.61071928, 0.72627451]
+                		[0.09863846, 0.11702187, 0.59105956, 0.91169733]
+    ```
+	take row from matrix (right), then transpose and then multiply. After that sum.
+	<h5>dimensions should match! i.e. cols in matrix must be equal to rows
+		in vector
+	</h5>
+
+	- matrix-matrix multiplication
+	  col1 == row2; row1 == col2
+	  1. take full first matrix, tranapose every row
+	  2. multiply by vector of second (we take only corresponding)
+	  3. sum
+
+	- Identity matrix (I)
+		- diagonal (left to right) is 1 and all other is 0
+			i.e. U * I = U
+
+	- Matrix Inverse
+		- A(-1) * A = I
+		- Only square matrix has inverse (rows == cols)
+
+
+
+
+
+
+
+
+
+
+
+
