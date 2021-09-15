@@ -113,7 +113,7 @@
 
 	- matrix-matrix multiplication
 	  col1 == row2; row1 == col2
-	  1. take full first matrix, tranapose every row
+	  1. take full first matrix, transpose every row
 	  2. multiply by vector of second (we take only corresponding)
 	  3. sum
 
