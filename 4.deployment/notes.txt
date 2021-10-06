@@ -1,0 +1,24 @@
+1. pipenv install numpy pandas scikit-learn==0.24.2
+2. pipenv install (if we want to use project on another pc)
+3. pipenv shell (to activate env and force particular versions)
+4. gunicron --bind 0.0.0.0:7000 ping:app
+
+5. Or we can combine 3 & 4 steps: pipenv run gunicron --bind 0.0.0.0:7000 ping:app
+
+6. docker build -t test .
+7. docker run -it --rm --entrypoint=bash test
+
+8. Inside Dockerfile: RUN pipenv install --system --deploy
+It'll skip creation of virtual env as Docker is already an isolated thing
+
+9. At first we install all the packages from `Pipfile`
+COPY ["Pipfile", "Pipfile.lock", "./"]
+
+RUN pipenv install --system --deploy
+
+and then we need to move the desired files:
+
+10. docker run -it --rm test (for final running)
+!!!BUT it'll cause errors as we're to map port exposed in Docker to port exposed
+In Host Machine:
+docker run -it --rm -p 7000:7000 test
