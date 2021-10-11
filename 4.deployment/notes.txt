@@ -22,3 +22,16 @@ and then we need to move the desired files:
 !!!BUT it'll cause errors as we're to map port exposed in Docker to port exposed
 In Host Machine:
 docker run -it --rm -p 7000:7000 test
+
+11. EB will include containers (Docker) inside and if there are many
+	requests coming, EB will scale up the service. I.e. create additional
+	instances of Docker container (similar to Load-balancing). And EB can also
+	scale down if load is smaller.
+
+12. `pipenv install awsebcli --dev` as we don't want to install aws command inside
+	our python. --dev is for case when deploying/developing.
+
+13. Commands
+eb init -p docker churn-serving
+eb local run --port 7000 (to test locally before uploading to the cloud)
+eb create churn-serving-env
