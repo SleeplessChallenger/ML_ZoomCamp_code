@@ -35,3 +35,10 @@ docker run -it --rm -p 7000:7000 test
 eb init -p docker churn-serving
 eb local run --port 7000 (to test locally before uploading to the cloud)
 eb create churn-serving-env
+
+And to finalize the deployment:
+
+git add .
+git commit -m "Some message"
+
+eb deploy
